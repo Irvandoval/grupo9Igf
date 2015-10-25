@@ -9,7 +9,7 @@ import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+//comentario
 @Repository
 public class TBTipoClaseDAO implements DAO<TBTipoClase, String>{
 	@Autowired
