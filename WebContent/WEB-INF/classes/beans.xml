@@ -17,5 +17,12 @@
 	<bean id="tbAplicativoDao" class="grupo09.dao.TBAplicativoDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+	 <bean id="ctrlASClase" 
+	class="grupo09.negocio.CtrlASClase" > 
+		<constructor-arg ref ="asClaseDao" />
+	</bean>
+	<bean id="asClaseDao" class="grupo09.dao.ASClaseDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
 	<bean id="hibernateUtil" class="grupo09.utilidades.datos.HibernateUtil"> </bean>  
 </beans>	     

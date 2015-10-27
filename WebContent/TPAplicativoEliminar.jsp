@@ -9,7 +9,7 @@
 String mensaje = "Hubo un error al eliminar el registro.";
 String id =  request.getParameter("id");
 ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-CtrlTBTipoClase ctrlTbtc = (CtrlTBTipoClase) ac.getBean("ctrlTBTipoClase");
+CtrlTBAplicativo ctrlTbtc = (CtrlTBAplicativo) ac.getBean("ctrlTBAplicativo");
 Boolean estado = ctrlTbtc.eliminar(id);
 if (estado) mensaje = "Se elimino el registro con exito.";
 
@@ -26,6 +26,6 @@ if (estado) mensaje = "Se elimino el registro con exito.";
 <body>
 <%@ include file="navbar.html" %>
 <%= mensaje %>
-<a href="/TareaIGFGrupo09/TPTipoClasePpal.jsp" class="btn btn-success">Aceptar</a>
+<a href="/TareaIGFGrupo09/TPAplicativoPpal.jsp" class="btn btn-success">Aceptar</a>
 </body>
 </html>

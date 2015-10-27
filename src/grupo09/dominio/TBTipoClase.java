@@ -1,12 +1,15 @@
 package grupo09.dominio;
 
 import java.io.Serializable;
+import java.util.List;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -26,6 +29,8 @@ public class TBTipoClase implements Serializable{
 	private String cTipoClase;
 	private String dTipoClase;
 	private String fIngreso;
+	private List<ASClase> asClaseList;
+	
 	
 	
 	public TBTipoClase(String cTipoClase, String dTipoClase, String fIngreso) {
@@ -67,6 +72,15 @@ public class TBTipoClase implements Serializable{
 		this.fIngreso = fIngreso;
 	}
 	
-	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tbTipoClase" )
+	public List<ASClase> getAsClaseList() {
+		return asClaseList;
+	}
+
+	public void setAsClaseList(List<ASClase> asClaseList) {
+		this.asClaseList = asClaseList;
+	}
+
+
 
 }

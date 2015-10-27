@@ -8,15 +8,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-         String mensaje = "Hubo un error al insertar el registro.";
+         String mensaje = "Hubo un error al editar el registro.";
          String id =  request.getParameter("id");
     	 String nombre = request.getParameter("nombre");
     	 String fecha = request.getParameter("fecha");
-    	 TBTipoClase tbtc = new TBTipoClase(id,nombre,fecha);
+    	 
+    	 if(!id.isEmpty() && !nombre.isEmpty() && !fecha.isEmpty()){
+    	 TBAplicativo tbtc = new TBAplicativo(id,nombre,fecha);
     	 ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
-    	 CtrlTBTipoClase ctrlTbtc = (CtrlTBTipoClase) ac.getBean("ctrlTBTipoClase");
-    	 Boolean estado = ctrlTbtc.agregar(tbtc);
-    	 if (estado) mensaje = "La inserción del dato ha sido exitosa.";
+    	 CtrlTBAplicativo ctrlTbtc = (CtrlTBAplicativo) ac.getBean("ctrlTBAplicativo");
+    	 Boolean estado = ctrlTbtc.editar(tbtc);
+    	 if (estado) mensaje = "La edición del dato ha sido exitosa.";
+    	 }
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -25,11 +28,11 @@
 <script src="jq/jquery.js"></script>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>Editar</title>
 </head>
 <body>
 <%@ include file="navbar.html" %>
 <%= mensaje%>
-<a href="/TareaIGFGrupo09/TPTipoClasePpal.jsp" class="btn btn-success">Aceptar</a>
+<a href="/TareaIGFGrupo09/TPAplicativoPpal.jsp" class="btn btn-success">Aceptar</a>
 </body>
 </html>

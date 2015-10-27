@@ -8,6 +8,9 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <title>Agregar Nuevo</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="jq/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <%@ include file="navbar.html" %>

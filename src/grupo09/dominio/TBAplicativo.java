@@ -1,9 +1,13 @@
 package grupo09.dominio;
 
+import java.util.List;
+
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +16,9 @@ public class TBAplicativo {
      private String cAplicativo;
      private String dAplicativo;
      private String fIngreso;
+     private List<ASClase> asClaseList;
      
+    public TBAplicativo(){}
 	public TBAplicativo(String cAplicativo, String dAplicativo, String fIngreso) {
 		this.cAplicativo = cAplicativo;
 		this.dAplicativo = dAplicativo;
@@ -49,6 +55,14 @@ public class TBAplicativo {
 		this.fIngreso = fIngreso;
 	}
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tbAplicativo" )
+	public List<ASClase> getAsClaseList() {
+		return asClaseList;
+	}
+
+	public void setAsClaseList(List<ASClase> asClaseList) {
+		this.asClaseList = asClaseList;
+	}
      
      
 }

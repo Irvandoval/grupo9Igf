@@ -12,7 +12,7 @@
 <body>
 <%@ include file="navbar.html" %>
 <div id="nuevo" class="content text-center">
-	<h2>Nuevo TBTipoClase</h2>
+	<h2>Nuevo TBAplicativo</h2>
 		<form action="http://localhost:8080/TareaIGFGrupo09/TPAplicativoInsertar.jsp">
 			<div class="form-group">
 				<label for="usr">id:</label> <input type="text"

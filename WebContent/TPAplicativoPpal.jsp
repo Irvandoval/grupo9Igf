@@ -50,8 +50,8 @@
 						<td><c:out value="${tbAplicativo.cAplicativo}" /></td>
 						<td><c:out value="${tbAplicativo.dAplicativo}" /></td>
 						<td><c:out value="${tbAplicativo.fIngreso}" /></td>
-						<td> <a href="/TareaIGFGrupo09/TPAplicativoEliminar.jsp?id=<c:out value='${tbAplicativo.cTipoClase}'/>" class="btn btn-danger"> Borrar</a>
-							<a href="/TareaIGFGrupo09/TPAplicativoEditando.jsp?id=<c:out value='${tbTipoClase.cTipoClase}'/>" class="btn btn-warning"> Editar</a>
+						<td> <a href="/TareaIGFGrupo09/TPAplicativoEliminar.jsp?id=<c:out value='${tbAplicativo.cAplicativo}'/>" class="btn btn-danger"> Borrar</a>
+							<a href="/TareaIGFGrupo09/TPAplicativoEditando.jsp?id=<c:out value='${tbAplicativo.cAplicativo}'/>" class="btn btn-warning"> Editar</a>
 						</td>
 					</tr>
 
