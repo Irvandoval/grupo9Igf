@@ -11,5 +11,7 @@
 		<mapping class="grupo09.dominio.TBTipoClase" />
 		<mapping class="grupo09.dominio.TBAplicativo" />
 		<mapping class="grupo09.dominio.ASClase"/>
+		<mapping class="grupo09.dominio.TBTipoAtributo" />
+		
 	</session-factory>
 </hibernate-configuration>
