@@ -52,7 +52,7 @@
 						<td><c:out value="${tbTipoMetodo.dTipoMetodo}" /></td>
 						<td><c:out value="${tbTipoMetodo.fIngreso}" /></td>
 						<td> <a href="/TareaIGFGrupo09/TPTipoMetodoEliminar.jsp?id=<c:out value='${tbTipoMetodo.cTipoMetodo}'/>" class="btn btn-danger"> Borrar</a>
-							<a href="/TareaIGFGrupo09/TPTipoMetodoEditando.jsp?id=<c:out value='${tbTipoMetodoe.cTipoMetodo}'/>" class="btn btn-warning"> Editar</a>
+							<a href="/TareaIGFGrupo09/TPTipoMetodoEditando.jsp?id=<c:out value='${tbTipoMetodo.cTipoMetodo}'/>" class="btn btn-warning"> Editar</a>
 						</td>
 					</tr>
 

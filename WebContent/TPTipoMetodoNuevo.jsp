@@ -19,11 +19,11 @@
 		<form action="http://localhost:8080/TareaIGFGrupo09/TPTipoMetodoInsertar.jsp">
 			<div class="form-group">
 				<label for="usr">Id Metodo:</label> <input type="text"
-					class="form-control text-center" name="id">
+					class="form-control text-center" name="id" maxlength="1">
 			</div>
 			<div class="form-group">
 				<label for="usr">Nombre Metodo:</label> <input type="text"
-					class="form-control text-center" name="nombre">
+					class="form-control text-center" name="nombre" maxlength="20">
 			</div>
 			<div class="form-group">
 				<label for="usr">Fecha de Ingreso:</label> <input type="text"

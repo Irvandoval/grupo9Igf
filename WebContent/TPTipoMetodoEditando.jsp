@@ -32,13 +32,13 @@ TBTipoMetodo tbtc = ctrlTbtc.obtenerByID(id);
 			</div>
 			<div class="form-group">
 				<label for="usr">Nombre Metodo:</label> <input type="text"
-					class="form-control text-center" name="nombre" value="<%= tbtc.getdTipoMetodo() %>">
+					class="form-control text-center" name="nombre" value="<%= tbtc.getdTipoMetodo() %>"/>
 			</div>
 			<div class="form-group">
 				<label for="usr">Fecha de ingreso:</label> <input type="text"
 					class="form-control text-center" name="fecha" value="<%= tbtc.getfIngreso() %>" />
 			</div>
-			<input type="submit" value="Editar" class="btn btn-success">
+			<input type="submit" value="Editar" class="btn btn-success"/>
 		</form>
 	</div>
 </body>
