@@ -24,7 +24,7 @@ public class TBTipoMetodo implements Serializable{
 	private String cTipoMetodo;
 	private String dTipoMetodo;
 	private String fIngreso;
-	private List<ASClase> asMetodoList;
+	//private List<ASMetodo> asMetodoList;
 	
 	public TBTipoMetodo(String cTipoMetodo, String dTipoMetodo, String fIngreso) {
 		this.cTipoMetodo = cTipoMetodo;
@@ -41,7 +41,7 @@ public class TBTipoMetodo implements Serializable{
 		return cTipoMetodo;
 	}
 
-	public void setcTipoMetodo(String cTipoClase) {
+	public void setcTipoMetodo(String cTipoMetodo) {
 		this.cTipoMetodo = cTipoMetodo;
 	}
 	
@@ -51,7 +51,7 @@ public class TBTipoMetodo implements Serializable{
 		return dTipoMetodo;
 	}
 
-	public void setdTipoMetodo(String dTipoClase) {
+	public void setdTipoMetodo(String dTipoMetodo) {
 		this.dTipoMetodo = dTipoMetodo;
 	}
 	
@@ -64,15 +64,15 @@ public class TBTipoMetodo implements Serializable{
 	public void setfIngreso(String fIngreso) {
 		this.fIngreso = fIngreso;
 	}
-	
+	/*
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tbTipoMetodo" )
-	public List<ASClase> getAsMetodoList() {
+	public List<ASMetodo> getAsMetodoList() {
 		return asMetodoList;
 	}
 
-	public void setAsMetodoList(List<ASClase> asClaseList) {
+	public void setAsMetodoList(List<ASMetodo> asMetodoList) {
 		this.asMetodoList = asMetodoList;
-	}
+	} */
 	
 }
 
