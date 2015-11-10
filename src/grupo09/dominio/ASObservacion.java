@@ -23,6 +23,8 @@ public class ASObservacion implements Serializable{
 	private String bActivo;
 	private ASClase asClase;
 	
+	
+
 	public ASObservacion(){}
 	
 	public ASObservacion(int cObservacion, String dObservacion, String cUsuario, String fIngreso, String bActivo,
@@ -92,5 +94,21 @@ public class ASObservacion implements Serializable{
 	public void setbActivo(String bActivo) {
 		this.bActivo = bActivo;
 	}
+	
+	
+	@JoinColumn(name = "c_clase", referencedColumnName = "c_clase")
+	@ManyToOne(optional = false)
+	public ASClase getAsClase() {
+		return asClase;
+	}
+
+	public void setAsClase(ASClase asClase) {
+		this.asClase = asClase;
+	}
+	
+	
+	
+	
+	
 
 }

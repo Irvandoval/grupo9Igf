@@ -41,6 +41,19 @@
 	 <bean id="tbTipoMetodoDao" class="grupo09.dao.TBTipoMetodoDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+	 
+	 
+	  <bean id="ctrlASObservacion" 
+	class="grupo09.negocio.CtrlASObservacion" > 
+		<constructor-arg ref ="asObservacionDao" />
+	</bean>
+	<bean id="asObservacionDao" class="grupo09.dao.ASObservacionDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
+	 
+	 
+	  
+	 
 
 	<bean id="hibernateUtil" class="grupo09.utilidades.datos.HibernateUtil"> </bean>  
 </beans>	     
