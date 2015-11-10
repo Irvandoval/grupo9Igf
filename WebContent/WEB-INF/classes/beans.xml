@@ -49,12 +49,11 @@
 	<bean id="asInterfaceDao" class="grupo09.dao.ASInterfaceDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
-	 
 	  <bean id="ctrlASInterfaceImplementa" 
-	class="grupo09.negocio.CtrlASInterface" > 
+	class="grupo09.negocio.CtrlASInterfaceImplementa" > 
 		<constructor-arg ref ="asInterfaceImplementaDao" />
 	</bean>
-	<bean id="asInterfaceImplementaDao" class="grupo09.dao.ASInterfaceDAO" >
+	<bean id="asInterfaceImplementaDao" class="grupo09.dao.ASInterfaceImplementaDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
 	 
