@@ -41,6 +41,22 @@
 	 <bean id="tbTipoMetodoDao" class="grupo09.dao.TBTipoMetodoDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
-
+<!-- bryan flores beans -->
+ <bean id="ctrlASInterface" 
+	class="grupo09.negocio.CtrlASInterface" > 
+		<constructor-arg ref ="asInterfaceDao" />
+	</bean>
+	<bean id="asInterfaceDao" class="grupo09.dao.ASInterfaceDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
+	 
+	  <bean id="ctrlASInterfaceImplementa" 
+	class="grupo09.negocio.CtrlASInterface" > 
+		<constructor-arg ref ="asInterfaceImplementaDao" />
+	</bean>
+	<bean id="asInterfaceImplementaDao" class="grupo09.dao.ASInterfaceDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
+	 
 	<bean id="hibernateUtil" class="grupo09.utilidades.datos.HibernateUtil"> </bean>  
 </beans>	     
