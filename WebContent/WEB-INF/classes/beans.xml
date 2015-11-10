@@ -24,6 +24,8 @@
 	<bean id="asClaseDao" class="grupo09.dao.ASClaseDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+	 
+	 
 	<bean id="ctrlTBTipoAtributo" 
 	class="grupo09.negocio.CtrlTBTipoAtributo" > 
 		<constructor-arg ref ="tbTipoAtributoDao" />
@@ -51,8 +53,14 @@
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
 	 
-	 
+	 <bean id="asMetodoDao" class="grupo09.dao.ASMetodoDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
 	  
+	   <bean id="ctrlASMetodo" 
+	class="grupo09.negocio.CtrlASMetodo" > 
+		<constructor-arg ref ="asMetodoDao" />
+	</bean>
 	 
 
 	<bean id="hibernateUtil" class="grupo09.utilidades.datos.HibernateUtil"> </bean>  

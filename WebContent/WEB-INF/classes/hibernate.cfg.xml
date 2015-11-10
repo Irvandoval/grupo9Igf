@@ -13,7 +13,9 @@
 		<mapping class="grupo09.dominio.ASClase"/>
 		<mapping class="grupo09.dominio.TBTipoAtributo" />
 		<mapping class="grupo09.dominio.TBTipoMetodo" />
-		<mapping class="grupo09.dominio.ASObservacion" />
+		<mapping class="grupo09.dominio.ASObservacion" />		
+		<mapping class="grupo09.dominio.ASMetodo" />
+		
 		
 		
 		
