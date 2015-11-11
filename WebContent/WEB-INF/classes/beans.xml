@@ -62,6 +62,12 @@
 		<constructor-arg ref ="asMetodoDao" />
 	</bean>
 	 
-
+	 <bean id="ctrlASAtributo" 
+	class="grupo09.negocio.CtrlASAtributo" > 
+		<constructor-arg ref ="asAtributoDao" />
+	</bean>
+	<bean id="asAtributoDao" class="grupo09.dao.ASAtributoDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
 	<bean id="hibernateUtil" class="grupo09.utilidades.datos.HibernateUtil"> </bean>  
 </beans>	     
