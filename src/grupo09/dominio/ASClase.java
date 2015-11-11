@@ -1,13 +1,16 @@
 package grupo09.dominio;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,7 @@ public class ASClase implements Serializable{
 	private String fIngreso;
 	private TBTipoClase tbTipoClase;
 	private TBAplicativo tbAplicativo;
+	private List<ASAtributo> asAtributoList; 
 	
 	public ASClase(){}
 	public ASClase(int cClase, String dClase, String cUsuario, String fIngreso,
@@ -89,6 +93,14 @@ public class ASClase implements Serializable{
 	}
 	public void setTbAplicativo(TBAplicativo tbAplicativo) {
 		this.tbAplicativo = tbAplicativo;
+	}
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "asClase" )
+	public List<ASAtributo> getAsAtributoList() {
+		return asAtributoList;
+	}
+	public void setAsAtributoList(List<ASAtributo> asAtributoList) {
+		this.asAtributoList = asAtributoList;
 	}
 	
 	

@@ -3,11 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
-	<bean id="ctrlTBTipoClase" 
+	
+	  <bean id="ctrlTBTipoClase" 
 	class="grupo09.negocio.CtrlTBTipoClase" > 
 		<constructor-arg ref ="tbTipoClaseDao" />
 	</bean>
-	<bean id="tbTipoClaseDao" class="grupo09.dao.TBTipoClaseDAO" >
+	
+	 <bean id="tbTipoClaseDao" class="grupo09.dao.TBTipoClaseDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
 	 <bean id="ctrlTBAplicativo" 

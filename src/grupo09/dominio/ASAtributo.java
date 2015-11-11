@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -16,134 +17,170 @@ import javax.persistence.Table;
 @IdClass(ASAtributoPk.class)
 
 public class ASAtributo implements Serializable{
-
-	
-	@Id
-    @Column(name = "c_clase")
-    private ASClase cClase;
-
-    @Id
-    @Column(name = "c_metodo")
-    private ASMetodo cMetodo; 
-    
-    @Id
-    @Column(name = "c_atributo")
-    private int cAtributo;
-	
-
-	private String dAtributo;
-	private String dTipodatoAtributo;
-	private String cUsuario;
-	private String fIngreso;
-	private TBTipoAtributo tbTipoAtributo;
-
 	
 	private static final long serialVersionUID = 1L;
+	/* PKs */
+	@Id
+	@Column(name = "c_clase")
+	private int cClase; 
+	
+	@Id
+	@Column(name = "c_atributo")
+	private int cAtributo;
+	//private int cMetodo;
+	@Basic(optional = false)
+	@Column(name = "d_atributo")
+	private String dAtributo;
+	@Basic(optional = false)
+	@Column(name = "d_tipo_dato_atributo")
+	private String dTipoDatoAtributo;
+	@Basic(optional = false)
+	@Column(name = "c_usuario")
+	private String cUsuario;
+	@Basic(optional = false)
+	@Column(name = "f_ingreso")
+	private String fingreso;
+	/* FKs */
+	@JoinColumn(name = "c_clase", referencedColumnName="c_clase", insertable=false, updatable=false)
+	@ManyToOne(optional = false)
+	private ASClase asClase; 
+	
+	@ManyToOne
+	@JoinColumns({
+	@JoinColumn(name="c_clase", referencedColumnName="c_clase",insertable=false,updatable=false),
+	@JoinColumn(name="c_metodo", referencedColumnName="c_metodo",insertable=false,updatable=false)
+	})
+	private ASMetodo asMetodo;
+	
+	@JoinColumn(name = "c_tipo_atributo", referencedColumnName="c_tipo_atributo")
+	@ManyToOne(optional = false)
+	private TBTipoAtributo tbTipoAtributo;
+	
+	
+	public ASAtributo() {
+		
+	}
+
+
+	public ASAtributo(int cClase, int cAtributo, String dAtributo,
+			String dTipoDatoAtributo, String cUsuario, String fingreso,
+			ASClase asClase, ASMetodo asMetodo, TBTipoAtributo tbTipoAtributo) {
+
+		this.cClase = cClase;
+		this.cAtributo = cAtributo;
+		this.dAtributo = dAtributo;
+		this.dTipoDatoAtributo = dTipoDatoAtributo;
+		this.cUsuario = cUsuario;
+		this.fingreso = fingreso;
+		this.asClase = asClase;
+		this.asMetodo = asMetodo;
+		this.tbTipoAtributo = tbTipoAtributo;
+	}
 
 	
-
-	@JoinColumn(name = "c_clase", referencedColumnName = "c_clase")
-	@ManyToOne(optional = false)
-	public ASClase getcClase() {
+	public int getcClase() {
 		return cClase;
 	}
-	public void setcClase(ASClase cClase) {
+
+
+	public void setcClase(int cClase) {
 		this.cClase = cClase;
 	}
+
 	
-	@JoinColumn(name = "c_metodo", referencedColumnName = "c_metodo")
-	@ManyToOne(optional = false)
-	public ASMetodo getcMetodo() {
-		return cMetodo;
-	}
-	public void setcMetodo(ASMetodo cMetodo) {
-		this.cMetodo = cMetodo;
-	}
-	
-	@Basic(optional = false)
-	@Column(name = "c_atributo")
 	public int getcAtributo() {
 		return cAtributo;
 	}
+
+
 	public void setcAtributo(int cAtributo) {
 		this.cAtributo = cAtributo;
 	}
-	
-	@Basic(optional = false)
-	@Column(name = "d_atributo")
+
+
 	public String getdAtributo() {
 		return dAtributo;
 	}
-	public void setdAtributo(String dAtributo) {
-		this.dAtributo = dAtributo;
+
+
+	public void setdAtributo(String dMetodo) {
+		this.dAtributo = dMetodo;
 	}
+
+
+	public String getdTipoDatoAtributo() {
+		return dTipoDatoAtributo;
+	}
+
+
+	public void setdTipoDatoAtributo(String dTipoDatoAtributo) {
+		this.dTipoDatoAtributo = dTipoDatoAtributo;
+	}
+
 	
-	@Basic(optional = false)
-	@Column(name = "d_tipo_dato_atributo")
-	public String getdTipodatoAtributo() {
-		return dTipodatoAtributo;
-	}
-	public void setdTipodatoAtributo(String dTipodatoAtributo) {
-		this.dTipodatoAtributo = dTipodatoAtributo;
-	}
-	
-	@Basic(optional = false)
-	@Column(name = "c_usuario")
 	public String getcUsuario() {
 		return cUsuario;
 	}
+
+
 	public void setcUsuario(String cUsuario) {
 		this.cUsuario = cUsuario;
 	}
-	
-	@Basic(optional = false)
-	@Column(name = "f_ingreso")
-	public String getfIngreso() {
-		return fIngreso;
+
+
+	public String getFingreso() {
+		return fingreso;
 	}
-	public void setfIngreso(String fIngreso) {
-		this.fIngreso = fIngreso;
+
+
+	public void setFingreso(String fingreso) {
+		this.fingreso = fingreso;
 	}
+
 	
+	public ASClase getAsClase() {
+		return asClase;
+	}
+
+
+	public void setAsClase(ASClase asClase) {
+		this.asClase = asClase;
+	}
+
 	
-	@JoinColumn(name = "c_tipo_atributo", referencedColumnName = "c_tipo_atributo")
-	@ManyToOne(optional = false)
+	public ASMetodo getAsMetodo() {
+		return asMetodo;
+	}
+
+
+	public void setAsMetodo(ASMetodo asMetodo) {
+		this.asMetodo = asMetodo;
+	}
+
+	
 	public TBTipoAtributo getTbTipoAtributo() {
 		return tbTipoAtributo;
 	}
-	public void settbTipoAtributo(TBTipoAtributo tbTipoAtributo) {
-		this.tbTipoAtributo = tbTipoAtributo;
-	}
-	
-	
-	public ASAtributo(ASClase cClase, ASMetodo cMetodo, int cAtributo, String dAtributo, String dTipodatoAtributo, String cUsuario, String fIngreso,
-			TBTipoAtributo tbTipoAtributo) {
-		super();
-		this.cClase = cClase;
-		this.cMetodo = cMetodo;
-		this.cAtributo = cAtributo;
-		this.dAtributo = dAtributo;
-		this.dTipodatoAtributo = dTipodatoAtributo; 
-		this.cUsuario = cUsuario;
-		this.fIngreso = fIngreso;
-		this.tbTipoAtributo = tbTipoAtributo;
 
+
+	public void setTbTipoAtributo(TBTipoAtributo tbTipoAtributo) {
+		this.tbTipoAtributo = tbTipoAtributo;
 	}
-	public ASAtributo(){}
+	
+	
+	
 	
 }
 	class ASAtributoPk implements Serializable{
 
-	    /**
-		 * 
-		 */
+	  
 		private static final long serialVersionUID = 1L;
 
 		@Column(name = "c_clase")
-	    private Long cClase;
+	    private int cClase;
 
-	    @Column(name = "c_metodo")
-	    private Long cMetodo;
+	    @Column(name = "c_atributo")
+	    private int cAtributo;
 
 	    /* Getters And Setters */
 
