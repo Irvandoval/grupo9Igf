@@ -45,8 +45,32 @@
 	 <bean id="tbTipoMetodoDao" class="grupo09.dao.TBTipoMetodoDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+
+<!-- bryan flores beans -->
+ <bean id="ctrlASInterface" 
+	class="grupo09.negocio.CtrlASInterface" > 
+		<constructor-arg ref ="asInterfaceDao" />
+	</bean>
+	<bean id="asInterfaceDao" class="grupo09.dao.ASInterfaceDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
 	 
+	  <bean id="ctrlASInterfaceImplementa" 
+	class="grupo09.negocio.CtrlASInterfaceImplementa" > 
+		<constructor-arg ref ="asInterfaceImplementaDao" />
+	</bean>
+	<bean id="asInterfaceImplementaDao" class="grupo09.dao.ASInterfaceImplementaDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
 	 
+	  <bean id="CtrlASClaseInterface" 
+	class="grupo09.negocio.CtrlASClaseInterface" > 
+		<constructor-arg ref ="ASClaseInterfaceDao" />
+	</bean>
+	<bean id="ASClaseInterfaceDao" class="grupo09.dao.ASClaseInterfaceDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
+	 	 
 	  <bean id="ctrlASObservacion" 
 	class="grupo09.negocio.CtrlASObservacion" > 
 		<constructor-arg ref ="asObservacionDao" />
@@ -83,5 +107,6 @@
 	<bean id="asAtributoDao" class="grupo09.dao.ASAtributoDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+
 	<bean id="hibernateUtil" class="grupo09.utilidades.datos.HibernateUtil"> </bean>  
 </beans>	     
