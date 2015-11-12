@@ -16,7 +16,7 @@
 		<mapping class="grupo09.dominio.ASObservacion" />		
 		<mapping class="grupo09.dominio.ASMetodo" />
 		<mapping class="grupo09.dominio.ASAtributo" />		
-		
+		<mapping class="grupo09.dominio.ASParametro" />			
 		
 		
 		

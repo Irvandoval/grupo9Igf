@@ -51,11 +51,23 @@
 	class="grupo09.negocio.CtrlASObservacion" > 
 		<constructor-arg ref ="asObservacionDao" />
 	</bean>
+	
+	
+	<bean id="ctrlASParametro" 
+	class="grupo09.negocio.CtrlASParametro" > 
+		<constructor-arg ref ="asParametroDao" />
+	</bean>
+	
+	
 	<bean id="asObservacionDao" class="grupo09.dao.ASObservacionDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
 	 
 	 <bean id="asMetodoDao" class="grupo09.dao.ASMetodoDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
+	 
+	 <bean id="asParametroDao" class="grupo09.dao.ASParametroDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
 	  
