@@ -3,11 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
-	<bean id="ctrlTBTipoClase" 
+	
+	  <bean id="ctrlTBTipoClase" 
 	class="grupo09.negocio.CtrlTBTipoClase" > 
 		<constructor-arg ref ="tbTipoClaseDao" />
 	</bean>
-	<bean id="tbTipoClaseDao" class="grupo09.dao.TBTipoClaseDAO" >
+	
+	 <bean id="tbTipoClaseDao" class="grupo09.dao.TBTipoClaseDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
 	 <bean id="ctrlTBAplicativo" 
@@ -24,6 +26,8 @@
 	<bean id="asClaseDao" class="grupo09.dao.ASClaseDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+	 
+	 
 	<bean id="ctrlTBTipoAtributo" 
 	class="grupo09.negocio.CtrlTBTipoAtributo" > 
 		<constructor-arg ref ="tbTipoAtributoDao" />
@@ -41,6 +45,7 @@
 	 <bean id="tbTipoMetodoDao" class="grupo09.dao.TBTipoMetodoDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+
 <!-- bryan flores beans -->
  <bean id="ctrlASInterface" 
 	class="grupo09.negocio.CtrlASInterface" > 
@@ -65,7 +70,31 @@
 	<bean id="ASClaseInterfaceDao" class="grupo09.dao.ASClaseInterfaceDAO" >
 		<constructor-arg ref ="hibernateUtil" />
 	 </bean>
+	 	 
+	  <bean id="ctrlASObservacion" 
+	class="grupo09.negocio.CtrlASObservacion" > 
+		<constructor-arg ref ="asObservacionDao" />
+	</bean>
+	<bean id="asObservacionDao" class="grupo09.dao.ASObservacionDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
 	 
+	 <bean id="asMetodoDao" class="grupo09.dao.ASMetodoDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
+	  
+	   <bean id="ctrlASMetodo" 
+	class="grupo09.negocio.CtrlASMetodo" > 
+		<constructor-arg ref ="asMetodoDao" />
+	</bean>
 	 
+	 <bean id="ctrlASAtributo" 
+	class="grupo09.negocio.CtrlASAtributo" > 
+		<constructor-arg ref ="asAtributoDao" />
+	</bean>
+	<bean id="asAtributoDao" class="grupo09.dao.ASAtributoDAO" >
+		<constructor-arg ref ="hibernateUtil" />
+	 </bean>
+
 	<bean id="hibernateUtil" class="grupo09.utilidades.datos.HibernateUtil"> </bean>  
 </beans>	     

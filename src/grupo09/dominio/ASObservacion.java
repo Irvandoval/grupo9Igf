@@ -20,12 +20,14 @@ public class ASObservacion implements Serializable{
 	private String dObservacion;
 	private String cUsuario;
 	private String fIngreso;
-	private String bActivo;
+	private int bActivo;
 	private ASClase asClase;
 	
+	
+
 	public ASObservacion(){}
 	
-	public ASObservacion(int cObservacion, String dObservacion, String cUsuario, String fIngreso, String bActivo,
+	public ASObservacion(int cObservacion, String dObservacion, String cUsuario, String fIngreso, int bActivo,
 			ASClase asClase) {
 		
 		this.cObservacion = cObservacion;
@@ -85,12 +87,30 @@ public class ASObservacion implements Serializable{
 	
 	@Basic(optional = false)
 	@Column(name = "b_activo")
-	public String getbActivo() {
+	
+	public int getbActivo() {
 		return bActivo;
 	}
 
-	public void setbActivo(String bActivo) {
+	public void setbActivo(int bActivo) {
 		this.bActivo = bActivo;
 	}
+	
+		
+	@JoinColumn(name = "c_clase", referencedColumnName = "c_clase")
+	@ManyToOne(optional = false)
+	public ASClase getAsClase() {
+		return asClase;
+	}
+
+	
+	public void setAsClase(ASClase asClase) {
+		this.asClase = asClase;
+	}
+	
+	
+	
+	
+	
 
 }
