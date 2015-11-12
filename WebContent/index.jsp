@@ -128,7 +128,8 @@
 			<div class='col-md-4'>
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						falta
+						
+					<a href="/TareaIGFGrupo09/ASParametroPpal.jsp">ASParametro</a>
 					</div>
 
 				</div>

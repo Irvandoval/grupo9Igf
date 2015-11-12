@@ -25,7 +25,7 @@ public class CtrlASMetodo {
 		this.asmDAO = asmDAO;
 	}
 	
-	public List<ASMetodo> daASClases(){
+	public List<ASMetodo> daASMetodos(){
 		return asmDAO.listarTodos(ASMetodo.class);
 	}
 	

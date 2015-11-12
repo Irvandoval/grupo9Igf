@@ -1,8 +1,8 @@
 package grupo09.negocio;
 
-import grupo09.dao.ASMetodoDAO;
+
 import grupo09.dao.ASParametroDAO;
-import grupo09.dominio.ASMetodo;
+
 import grupo09.dominio.ASParametro;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class CtrlASParametro {
 		this.aspDAO = aspDAO;
 	}
 	
-	public List<ASParametro> daASClases(){
+	public List<ASParametro> daASParametros(){
 		return aspDAO.listarTodos(ASParametro.class);
 	}
 	

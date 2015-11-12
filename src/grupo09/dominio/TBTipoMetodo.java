@@ -7,8 +7,6 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,7 +22,7 @@ public class TBTipoMetodo implements Serializable{
 	private String cTipoMetodo;
 	private String dTipoMetodo;
 	private String fIngreso;
-	//private List<ASMetodo> asMetodoList;
+	private List<ASMetodo> asMetodoList;
 	
 	public TBTipoMetodo(String cTipoMetodo, String dTipoMetodo, String fIngreso) {
 		this.cTipoMetodo = cTipoMetodo;
@@ -64,15 +62,15 @@ public class TBTipoMetodo implements Serializable{
 	public void setfIngreso(String fIngreso) {
 		this.fIngreso = fIngreso;
 	}
-	/*
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tbTipoMetodo" )
+	
+	@OneToMany(targetEntity=ASMetodo.class,cascade = CascadeType.ALL, mappedBy = "tbTipoMetodo" )
 	public List<ASMetodo> getAsMetodoList() {
 		return asMetodoList;
 	}
 
 	public void setAsMetodoList(List<ASMetodo> asMetodoList) {
 		this.asMetodoList = asMetodoList;
-	} */
+	} 
 	
 }
 

@@ -74,7 +74,7 @@ public class ASMetodo implements Serializable{
 	
 	public ASMetodo(int cClase, int cMetodo, String dMetodo,
 			String dTipoRetorno, String cUsuario, String fIngreso, int bActivo,
-			int nParametros, TBTipoMetodo cTipoMetodo, ASClase asClase) {
+			int nParametros, TBTipoMetodo tbTipoMetodo, ASClase asClase) {
 		
 		this.cClase = cClase;
 		this.cMetodo = cMetodo;
@@ -84,7 +84,7 @@ public class ASMetodo implements Serializable{
 		this.fIngreso = fIngreso;
 		this.bActivo = bActivo;
 		this.nParametros = nParametros;
-		this.tbTipoMetodo = cTipoMetodo;
+		this.tbTipoMetodo = tbTipoMetodo;
 		this.asClase = asClase;
 	}
 

@@ -27,19 +27,30 @@ public class ASAtributo implements Serializable{
 	@Id
 	@Column(name = "c_atributo")
 	private int cAtributo;
+	
+	
 	//private int cMetodo;
 	@Basic(optional = false)
 	@Column(name = "d_atributo")
+	
+	
 	private String dAtributo;
 	@Basic(optional = false)
+	
 	@Column(name = "d_tipo_dato_atributo")
 	private String dTipoDatoAtributo;
+	
+	
 	@Basic(optional = false)
-	@Column(name = "c_usuario")
+	@Column(name = "c_usuario")	
 	private String cUsuario;
-	@Basic(optional = false)
+	
+	
+	@Basic(optional = false)	
 	@Column(name = "f_ingreso")
 	private String fingreso;
+	
+	
 	/* FKs */
 	@JoinColumn(name = "c_clase", referencedColumnName="c_clase", insertable=false, updatable=false)
 	@ManyToOne(optional = false)

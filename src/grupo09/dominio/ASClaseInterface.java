@@ -18,9 +18,13 @@ public class ASClaseInterface implements Serializable{
 	@Basic(optional = false)
 	@Column(name = "c_clase_interface")
 	private int cClaseInterface;
+	
+	
 	@JoinColumn(name = "c_clase", referencedColumnName = "c_clase")
 	@ManyToOne(optional = false)
 	private ASClase cClase;
+	
+	
 	@JoinColumn(name = "c_interface", referencedColumnName = "c_interface")
 	@ManyToOne(optional = false)
 	private ASInterface cInterface;
