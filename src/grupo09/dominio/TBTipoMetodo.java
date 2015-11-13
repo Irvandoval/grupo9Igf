@@ -63,7 +63,7 @@ public class TBTipoMetodo implements Serializable{
 		this.fIngreso = fIngreso;
 	}
 	
-	@OneToMany(targetEntity=ASMetodo.class,cascade = CascadeType.ALL, mappedBy = "tbTipoMetodo" )
+	@OneToMany(targetEntity=ASMetodo.class,cascade=CascadeType.ALL, mappedBy="tbTipoMetodo" )
 	public List<ASMetodo> getAsMetodoList() {
 		return asMetodoList;
 	}
