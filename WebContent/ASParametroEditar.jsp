@@ -7,11 +7,16 @@
 <%@ page import="org.springframework.context.support.*"%>
 <%@ page import="org.springframework.web.context.support.*"%>
 <%@ page import="grupo09.dominio.*"%>
+<%@ page import="org.hibernate.HibernateException;"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <%
-String mensaje = "Hubo un error al editar el registro.";
+
+String mensaje = "Hubo un error al insertar el registro.";
+try{
+	 
+
 Integer idParametro = null;
 Integer idClase = null;
 Integer idMetodo = null;
@@ -46,10 +51,12 @@ ASClase asc = ctrlAsc.obtenerByID(idClase);
 ASMetodo asm = ctrlAsm.obtenerByID(idMetodo);
 	
 ASParametro asp = new ASParametro(asc,asm,idParametro,parametro,TipoParametro,usuario,fecha,idClase,idMetodo);
-Boolean estado = ctrlAsp.agregar(asp);
+Boolean estado = ctrlAsp.editar(asp);
 if (estado) mensaje = "La edicion del dato ha sido exitosa.";
-}
-    	
+}}
+catch(HibernateException e){
+mensaje="llave compuesta no encotrada";
+}  	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
