@@ -9,6 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 
+
 <%
 	ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
 	CtrlASAtributo ctrlAsc = (CtrlASAtributo) ac.getBean("ctrlASAtributo");
@@ -49,11 +50,11 @@
 					<tr>
 						<td class="text-center"><c:out value="${asAtributo.asClase.cClase}" /></td>
 						<td class="text-center"><c:out value="${asAtributo.cAtributo}" /></td>
-						<td class="text-center"><c:out value="${asAtributo.cMetodo}" /></td>							
+						<td class="text-center"><c:out value="${asAtributo.asMetodo.cMetodo}" /></td>							
 						<td class="text-center"><c:out value="${asAtributo.dAtributo}" /></td>
-						<td class="text-center"><c:out value="${asAtributo.dTipodatoAtributo}" /></td>						
+						<td class="text-center"><c:out value="${asAtributo.dTipoDatoAtributo}" /></td>						
 						<td class="text-center"><c:out value="${asAtributo.cUsuario}" /></td>
-						<td class="text-center"><c:out value="${asAtributo.fIngreso}" /></td>
+						<td class="text-center"><c:out value="${asAtributo.fingreso}" /></td>
 						<td class="text-center"><c:out value="${asAtributo.tbTipoAtributo.cTipoAtributo}" /></td>						
 						<td class="text-center"><a href="/TareaIGFGrupo09/ASAtributoEliminar.jsp?id=<c:out value='${asAtributo.cAtributo}'/>" class="btn btn-danger"> Borrar</a>
 							<a href="/TareaIGFGrupo09/ASAtributoEditando.jsp?id=<c:out value='${asAtributo.cAtributo}'/>" class="btn btn-warning"> Editar</a>

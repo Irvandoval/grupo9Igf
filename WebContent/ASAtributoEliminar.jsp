@@ -9,6 +9,7 @@
 String mensaje = "Hubo un error al eliminar el registro.";
 Integer id = Integer.parseInt(request.getParameter("id"));
 
+
 ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
 CtrlASAtributo ctrlAtributo = (CtrlASAtributo) ac.getBean("ctrlASAtributo");
 Boolean estado = ctrlAtributo.eliminar(id);

@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @IdClass(ASAtributoPk.class)
 
 public class ASAtributo implements Serializable{
+
 	
 	private static final long serialVersionUID = 1L;
 	/* PKs */
@@ -27,30 +28,21 @@ public class ASAtributo implements Serializable{
 	@Id
 	@Column(name = "c_atributo")
 	private int cAtributo;
-	
-	
-	//private int cMetodo;
+	@Basic(optional = false)
+	@Column(name = "c_metodo")
+	private int cMetodo;
 	@Basic(optional = false)
 	@Column(name = "d_atributo")
-	
-	
 	private String dAtributo;
 	@Basic(optional = false)
-	
 	@Column(name = "d_tipo_dato_atributo")
 	private String dTipoDatoAtributo;
-	
-	
 	@Basic(optional = false)
-	@Column(name = "c_usuario")	
+	@Column(name = "c_usuario")
 	private String cUsuario;
-	
-	
-	@Basic(optional = false)	
+	@Basic(optional = false)
 	@Column(name = "f_ingreso")
 	private String fingreso;
-	
-	
 	/* FKs */
 	@JoinColumn(name = "c_clase", referencedColumnName="c_clase", insertable=false, updatable=false)
 	@ManyToOne(optional = false)
@@ -75,7 +67,7 @@ public class ASAtributo implements Serializable{
 
 	public ASAtributo(int cClase, int cAtributo, String dAtributo,
 			String dTipoDatoAtributo, String cUsuario, String fingreso,
-			ASClase asClase, ASMetodo asMetodo, TBTipoAtributo tbTipoAtributo) {
+			ASClase asClase, ASMetodo asMetodo, TBTipoAtributo tbTipoAtributo, int cMetodo) {
 
 		this.cClase = cClase;
 		this.cAtributo = cAtributo;
@@ -85,6 +77,7 @@ public class ASAtributo implements Serializable{
 		this.fingreso = fingreso;
 		this.asClase = asClase;
 		this.asMetodo = asMetodo;
+		this.cMetodo = cMetodo;
 		this.tbTipoAtributo = tbTipoAtributo;
 	}
 
@@ -97,8 +90,19 @@ public class ASAtributo implements Serializable{
 	public void setcClase(int cClase) {
 		this.cClase = cClase;
 	}
+	
 
 	
+	public int getcMetodo() {
+		return cMetodo;
+	}
+
+
+	public void setcMetodo(int cMetodo) {
+		this.cMetodo = cMetodo;
+	}
+
+
 	public int getcAtributo() {
 		return cAtributo;
 	}
@@ -198,4 +202,3 @@ public class ASAtributo implements Serializable{
 	    /* Override Equals And HashCode */
 
 	}
-	
