@@ -40,7 +40,7 @@
     	 CtrlASClase ctrlAsc = (CtrlASClase) ac .getBean("ctrlASClase");
     	 
     	// ASClase asc = ctrlAsc.obtenerByID(IdClase);
-    ASMetodo asm = ctrlAsm.obtenerById(idMetodo);
+         ASMetodo asm = ctrlAsm.obtenerByID(idMetodo);
     		
     	// ASMetodo asm = new ASMetodo(idClase,nombre,usuario,fecha,tbtc,tba);
         // Boolean estado = ctrlAsm.agregar(asm);
