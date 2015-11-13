@@ -33,7 +33,7 @@ public class ASParametro implements Serializable{
 
 	public ASParametro(ASClase asClase, ASMetodo asMetodo, int cPArametro,
 			String dParametro, String cTipoParametro, String cUsuario,
-			String fIngreso) {
+			String fIngreso, int cClase , int cMetodo) {
 		super();
 		this.asClase = asClase;
 		this.asMetodo = asMetodo;
@@ -42,6 +42,8 @@ public class ASParametro implements Serializable{
 		this.cTipoParametro = cTipoParametro;
 		this.cUsuario = cUsuario;
 		this.fIngreso = fIngreso;
+		this.cClase = cClase;
+		this.cMetodo = cMetodo;
 	}
 
 	
