@@ -11,7 +11,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <%
-String mensaje = "Hubo un error al insertar el registro.";
+String mensaje = "Hubo un error al editar el registro.";
 Integer idParametro = null;
 Integer idClase = null;
 Integer idMetodo = null;
@@ -45,9 +45,9 @@ CtrlASClase ctrlAsc = (CtrlASClase) ac .getBean("ctrlASClase");
 ASClase asc = ctrlAsc.obtenerByID(idClase);
 ASMetodo asm = ctrlAsm.obtenerByID(idMetodo);
 	
-ASParametro asp = new ASParametro(asc,asm,idParametro,parametro,TipoParametro,usuario,fecha);
+ASParametro asp = new ASParametro(asc,asm,idParametro,parametro,TipoParametro,usuario,fecha,idClase,idMetodo);
 Boolean estado = ctrlAsp.agregar(asp);
-if (estado) mensaje = "La inserción del dato ha sido exitosa.";
+if (estado) mensaje = "La edicion del dato ha sido exitosa.";
 }
     	
 %>

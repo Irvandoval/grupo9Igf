@@ -60,47 +60,15 @@ request.setAttribute("idMetodo", idMet);
 		<form
 			action="http://localhost:8080/TareaIGFGrupo09/ASParametroEditar.jsp">
 			<div class="form-group">
-				<label for="usr">id clase:</label> <select name="id_clase"
-					class="form-control text-center">
-						<c:forEach var="ASClase" items="${listaASClase}">
-
-						<c:if test="${ ASClase.cClase ==  idClase}">
-							<option value='${ASClase.cClase}' selected>
-								<c:out value="${ASClase.dClase}"></c:out>
-							</option>
-
-						</c:if>
-						<c:if test="${ ASClase.cClase !=  idClase}">
-							<option value='${ASClase.cClase}'>
-								<c:out value="${ASClase.dClase}"></c:out>
-							</option>
-						</c:if>
-
-					</c:forEach>
-				</select>
+				<label for="usr">id clase:</label> <input readonly="readonly"
+					type="text" class="form-control text-center" name="id_clase"
+					value="<%=asp.getcClase()%>">
 			</div>
-			
 			<div class="form-group">
-				<label for="usr">id metodo:</label> <select name="id_metodo"
-					class="form-control text-center">
-
-					<c:forEach var="ASMetodo" items="${listaASMetodo}">
-
-						<c:if test="${ASMetodo.cMetodo ==  idMetodo}">
-							<option value='${ASMetodo.cMetodo}' selected>
-								<c:out value="${ASMetodo.dMetodo}"></c:out>
-							</option>
-
-						</c:if>
-						<c:if test="${ ASMetodo.cMetodo !=  idMetodo}">
-							<option value='${ASMetodo.cMetodo}'>
-								<c:out value="${ASMetodo.dMetodo}"></c:out>
-							</option>
-						</c:if>
-
-					</c:forEach>
-				</select>
-			</div>	
+				<label for="usr">id metodo:</label> <input readonly="readonly"
+					type="text" class="form-control text-center" name="id_metodo"
+					value="<%=asp.getcMetodo()%>">
+			</div>
 			
 			
 			<div class="form-group">
