@@ -56,7 +56,7 @@
 						<td class="text-center"><c:out value="${asMetodo.fIngreso}" /></td>						
 						<td class="text-center"><c:out value="${asMetodo.bActivo}" /></td>						
 						<td class="text-center"><c:out value="${asMetodo.nParametros}" /></td>
-						<td class="text-center"><c:out value="${asMetodo.TBTipoMetodo.cTipoMetodo}" /></td>	
+						<td class="text-center"><c:out value="${asMetodo.tbTipoMetodo.cTipoMetodo}" /></td>	
 																							
 							
 						<td class="text-center"><a href="/TareaIGFGrupo09/ASMetodoEliminar.jsp?id=<c:out value='${asMetodo.cMetodo}'/>" class="btn btn-danger"> Borrar</a>

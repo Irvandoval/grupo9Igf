@@ -14,7 +14,8 @@
 	     String mensaje = "Hubo un error al insertar el registro.";
 		 Integer idMetodo = null;
 		 Integer idClase = null;
-		 Integer idTPTipoMetodo = null;
+		 Integer activo = null;
+		 Integer nparametros = null;
           
           String strIdMetodo =  request.getParameter("id_metodo");
          if (!strIdMetodo.isEmpty()){
@@ -24,32 +25,36 @@
          if (!strIdClase.isEmpty()){
          idClase = Integer.parseInt(strIdClase);
          }
+         String stractivo =  request.getParameter("activo");
+         if (!stractivo.isEmpty()){
+           activo= Integer.parseInt(stractivo);
+         }
+         String strnparametros =  request.getParameter("n_parametros");
+         if (!strnparametros.isEmpty()){
+        	 nparametros= Integer.parseInt(strnparametros);
+         }
                  
          String metodo =  request.getParameter("metodo");
          String TipoRetorno =  request.getParameter("tipo_retorno");    	 
     	 String usuario = request.getParameter("usuario");
     	 String fecha = request.getParameter("fecha");
-    	 String activo = request.getParameter("activo");
-    	 String nparametros = request.getParameter("n_parametros");
     	 
     	 String TpTipoMetodo =  request.getParameter("tbtipometodo");
     	 
-    	 if(!strIdMetodo.isEmpty() && !strIdClase.isEmpty() && !TpTipoMetodo.isEmpty() && !metodo.isEmpty() && !TipoRetorno.isEmpty() && !usuario.isEmpty() && !fecha.isEmpty() && !activo.isEmpty() && !nparametros.isEmpty()){
+    	 if(!strIdMetodo.isEmpty() && !strIdClase.isEmpty() && !TpTipoMetodo.isEmpty() && !metodo.isEmpty() && !TipoRetorno.isEmpty() && !usuario.isEmpty() && !fecha.isEmpty()){
     	 ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
     	 
     	 
-
     	 CtrlTBTipoMetodo ctrlTBTipoMetodo = (CtrlTBTipoMetodo) ac .getBean("ctrlTBTipoMetodo");
     	 CtrlASMetodo ctrlAsm = (CtrlASMetodo) ac .getBean("ctrlASMetodo");
     	 CtrlASClase ctrlAsc = (CtrlASClase) ac .getBean("ctrlASClase");
     	 
-    	ASClase asc = ctrlAsc.obtenerByID(idClase);
-         ASMetodo asm = ctrlAsm.obtenerByID(idMetodo);
+    	 ASClase asc = ctrlAsc.obtenerByID(idClase);
          TBTipoMetodo tbm = ctrlTBTipoMetodo.obtenerByID(TpTipoMetodo);
     		
-    	// ASMetodo Asm //= new ASMetodo(idClase,idMetodo,metodo,TipoRetorno,usuario,fecha,activo,nparametros,TpTipoMetodo,asc);
-         //Boolean estado = ctrlAsm.agregar(Asm);
-    	// if (estado) mensaje = "La inserción del dato ha sido exitosa.";
+    	ASMetodo Asm = new ASMetodo(idClase,idMetodo,metodo,TipoRetorno,usuario,fecha,activo,nparametros,tbm,asc);
+         Boolean estado = ctrlAsm.agregar(Asm);
+    	if (estado) mensaje = "La inserción del dato ha sido exitosa.";
     	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -64,6 +69,6 @@
 <body>
 <%@ include file="navbar.html"%>
 <%= mensaje %>
-<a href="/TareaIGFGrupo09/ASParametroPpal.jsp" class="btn btn-success">Aceptar</a>
+<a href="/TareaIGFGrupo09/ASMetodoPpal.jsp" class="btn btn-success">Aceptar</a>
 </body>
 </html>

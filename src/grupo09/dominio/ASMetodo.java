@@ -201,10 +201,10 @@ public class ASMetodo implements Serializable{
 	}
 	
 	
-	public TBTipoMetodo getTBTipoMetodo() {
+	
+	public TBTipoMetodo getTbTipoMetodo() {
 		return tbTipoMetodo;
 	}
-	
 	public void setTbTipoMetodo(TBTipoMetodo tbTipoMetodo) {
 		this.tbTipoMetodo = tbTipoMetodo;
 	}

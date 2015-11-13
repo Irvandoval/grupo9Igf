@@ -41,7 +41,7 @@ request.setAttribute("listaTBTipoMetodo", listTbm);
 <body>
 	<%@ include file="navbar.html"%>
 	<div id="nuevo" class="content text-center">
-		<h2>Nuevo ASParametro</h2>
+		<h2>Nuevo ASMetodo</h2>
 		<form
 			action="http://localhost:8080/TareaIGFGrupo09/ASMetodoInsertar.jsp">
 			<div class="form-group">
@@ -60,9 +60,8 @@ request.setAttribute("listaTBTipoMetodo", listTbm);
 			
 			
 			<div class="form-group">
-				<label for="usr">id metodo:</label> <input readonly="readonly"
-					type="text" class="form-control text-center" name="id_as_clase"
-					>
+				<label for="usr">id metodo:</label> <input 
+					type="text" class="form-control text-center" name="id_metodo">
 			</div>
 			
 					
