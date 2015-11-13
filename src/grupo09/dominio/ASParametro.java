@@ -29,9 +29,7 @@ public class ASParametro implements Serializable{
 	
 	
 
-	public ASParametro() {
-		
-	}
+	public ASParametro() { }
 
 	public ASParametro(ASClase asClase, ASMetodo asMetodo, int cPArametro,
 			String dParametro, String cTipoParametro, String cUsuario,

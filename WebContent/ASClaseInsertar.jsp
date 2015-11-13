@@ -28,6 +28,7 @@
     	 ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
     	 CtrlTBAplicativo ctrlTba = (CtrlTBAplicativo) ac .getBean("ctrlTBAplicativo");
     	 CtrlTBTipoClase ctrlTbtc = (CtrlTBTipoClase) ac .getBean("ctrlTBTipoClase");
+    	 
     	 CtrlASClase ctrlAsc = (CtrlASClase) ac .getBean("ctrlASClase");
     	 
     	 TBTipoClase tbtc = ctrlTbtc.obtenerByID(idTipoClase);

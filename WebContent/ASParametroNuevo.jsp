@@ -43,7 +43,7 @@ request.setAttribute("listaASMetodo", listTbm);
 	<div id="nuevo" class="content text-center">
 		<h2>Nuevo ASParametro</h2>
 		<form
-			action="http://localhost:8080/TareaIGFGrupo09/ASParamtroInsertar.jsp">
+			action="http://localhost:8080/TareaIGFGrupo09/ASParametroInsertar.jsp">
 			<div class="form-group">
 				<label for="usr">id clase:</label> <select name="id_clase"
 					class="form-control text-center">

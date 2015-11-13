@@ -26,7 +26,7 @@ public class CtrlASParametro {
 	
 	public boolean agregar(ASParametro tb) {
 		// comprobamos si no existe un registro con el id ingresado
-		if (aspDAO.daById(ASParametro.class, tb.getcClase()) == null) {
+		if (aspDAO.daById(ASParametro.class, tb.getcPArametro()) == null) {
 			aspDAO.guardar(tb);
 			return true;
 		} else {
@@ -36,7 +36,7 @@ public class CtrlASParametro {
 	}
 	public boolean editar(ASParametro tb) {
 		// comprobamos si no existe un registro con el id ingresado
-		if (aspDAO.daById(ASParametro.class, tb.getcClase()) != null) {
+		if (aspDAO.daById(ASParametro.class, tb.getcPArametro()) != null) {
 			aspDAO.guardar(tb);
 			return true; // existe y se guarda
 		} else {

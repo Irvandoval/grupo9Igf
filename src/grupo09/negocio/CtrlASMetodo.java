@@ -31,7 +31,7 @@ public class CtrlASMetodo {
 	
 	public boolean agregar(ASMetodo tb) {
 		// comprobamos si no existe un registro con el id ingresado
-		if (asmDAO.daById(ASMetodo.class, tb.getcClase()) == null) {
+		if (asmDAO.daById(ASMetodo.class, tb.getcMetodo()) == null) {
 			asmDAO.guardar(tb);
 			return true;
 		} else {
@@ -41,7 +41,7 @@ public class CtrlASMetodo {
 	}
 	public boolean editar(ASMetodo tb) {
 		// comprobamos si no existe un registro con el id ingresado
-		if (asmDAO.daById(ASMetodo.class, tb.getcClase()) != null) {
+		if (asmDAO.daById(ASMetodo.class, tb.getcMetodo()) != null) {
 			asmDAO.guardar(tb);
 			return true; // existe y se guarda
 		} else {

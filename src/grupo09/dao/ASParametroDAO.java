@@ -89,7 +89,7 @@ public class ASParametroDAO implements DAO<ASParametro, Integer>{
 		// TODO Auto-generated method stub
 		sesion = sessionFactory.openSession();
 		Criteria crit = sesion.createCriteria(clase)
-				.add(Restrictions.eq("cParametro", id));
+				.add(Restrictions.eq("cPArametro", id));
 		ASParametro asp=(ASParametro) crit.uniqueResult();	
 		sesion.close();
 		return asp;

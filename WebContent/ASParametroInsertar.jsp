@@ -33,18 +33,21 @@
     	 String usuario = request.getParameter("usuario");
     	 String fecha = request.getParameter("fecha");
     	 
-    	 if(!parametro.isEmpty() && !TipoParametro.isEmpty() && !usuario.isEmpty() && !fecha.isEmpty() ){
+    	 if(!stridMetodo.isEmpty() && !strIdClase.isEmpty() && !stridParametro.isEmpty() && !parametro.isEmpty() && !TipoParametro.isEmpty() && !usuario.isEmpty() && !fecha.isEmpty() ){
     	 ApplicationContext ac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
     	 
+    	 
+
+    	 CtrlASParametro ctrlAsp = (CtrlASParametro) ac .getBean("ctrlASParametro");
     	 CtrlASMetodo ctrlAsm = (CtrlASMetodo) ac .getBean("ctrlASMetodo");
     	 CtrlASClase ctrlAsc = (CtrlASClase) ac .getBean("ctrlASClase");
     	 
-    	// ASClase asc = ctrlAsc.obtenerByID(IdClase);
+    	ASClase asc = ctrlAsc.obtenerByID(idClase);
          ASMetodo asm = ctrlAsm.obtenerByID(idMetodo);
     		
-    	// ASMetodo asm = new ASMetodo(idClase,nombre,usuario,fecha,tbtc,tba);
-        // Boolean estado = ctrlAsm.agregar(asm);
-    	 //if (estado) mensaje = "La inserción del dato ha sido exitosa.";
+    	 ASParametro asp = new ASParametro(asc,asm,idParametro,parametro,TipoParametro,usuario,fecha);
+         Boolean estado = ctrlAsp.agregar(asp);
+    	 if (estado) mensaje = "La inserción del dato ha sido exitosa.";
     	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

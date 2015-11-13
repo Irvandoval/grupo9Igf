@@ -27,9 +27,9 @@
 	request.setAttribute("listaTipoClase", listTtc);
 
 	String id = request.getParameter("id");
-
 	ASClase asc = ctrlClase.obtenerByID(Integer.parseInt(id));
 
+	
 	String idTC = asc.getTbTipoClase()
 			.getcTipoClase();
 	String idA = asc.getTbAplicativo().getcAplicativo();
@@ -56,6 +56,8 @@
 					type="text" class="form-control text-center" name="id_as_clase"
 					value="<%=asc.getcClase()%>">
 			</div>
+			
+			
 			<div class="form-group">
 				<label for="usr">tipo clase:</label> <select name="id_tipo_clase"
 					class="form-control text-center">
