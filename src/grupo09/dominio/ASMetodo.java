@@ -70,7 +70,8 @@ public class ASMetodo implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	
+
+	public ASMetodo() {	}
 	public ASMetodo(int cClase, int cMetodo, String dMetodo,
 			String dTipoRetorno, String cUsuario, String fIngreso, int bActivo,
 			int nParametros, TBTipoMetodo tbTipoMetodo, ASClase asClase) {
@@ -89,9 +90,6 @@ public class ASMetodo implements Serializable{
 
 
 
-	public ASMetodo() {
-		
-	}
 
 	//@Basic(optional = false)
 	//@Column(name = "c_clase")
