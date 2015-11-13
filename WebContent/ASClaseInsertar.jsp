@@ -13,6 +13,7 @@
 <%
 	     String mensaje = "Hubo un error al insertar el registro.";
 		 Integer idClase = null;
+		 
           String strIdClase = request.getParameter("id_as_clase");
          if (!strIdClase.isEmpty()){
            idClase = Integer.parseInt(strIdClase);

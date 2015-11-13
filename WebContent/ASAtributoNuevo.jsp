@@ -26,7 +26,7 @@
 	List<ASClase> listTba = ctrlTba.daASClases();
 	request.setAttribute("listaASClase", listTba);
 	
-	List<ASMetodo> listTbm = ctrlTbm.daASClases();
+	List<ASMetodo> listTbm = ctrlTbm.daASMetodos();
 	request.setAttribute("listaASMetodo", listTbm);
 	
 	List<TBTipoAtributo> listTtc = ctrlTbtc.daTBTipoAtributos();
